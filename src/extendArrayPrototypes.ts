@@ -47,7 +47,9 @@ declare global {
   }
 }
 
+for(const [fnName, fn] of Object.entries(arrayMethods)) Array.prototype[fnName] = Array.prototype[fnName] ?? fn;
 
+/*
 Array.prototype.shuffle = Array.prototype.shuffle ?? function<T>(): T[] {
   const shuffled = [...this];
   // fastest loop possible
@@ -136,4 +138,4 @@ Array.prototype.loopOver = Array.prototype.loopOver ?? function<T>(fn:(element:T
   if(!fn || typeof fn !== "function") throw new SyntaxError(`did not receive a valid function for the mapping, received: ${typeof fn}`)
   for(let i = this.length -1; i >= 0; i--) fn(this[i], i, this)
   return this;
-};
+};*/
