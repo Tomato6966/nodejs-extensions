@@ -1,9 +1,10 @@
-export * from "./array.ts";
+export * from "./arrayMethods.ts";
 
 interface nodeUtilsOptions {
     improveForeach?: boolean
 }
 
-export default function nodeUtils(options?:improveForeach) {
+export async function extendPrototypes(options?:improveForeach) {
     if(options && options.improveForeach) Array.prototype.forEach = Array.prototype.loopOver;
+    await import("./extendArrayPrototypes.ts");
 }
