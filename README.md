@@ -67,6 +67,9 @@ If you use it without the Array extension, aka by _Utils.function(), then always
 
  - [shuffle](#array-shuffle)
  - [lastElement](#array-lastElement)
+ - [firstElement](#array-firstElement)
+ - [first](#array-first)
+ - [last](#array-last)
  - [chunks](#array-chunks)
  - [sum](#array-sum)
  - [sumNumbersOnly](#array-sumNumbersOnly)
@@ -86,7 +89,7 @@ If you use it without the Array extension, aka by _Utils.function(), then always
  - [promiseMap](#array-promiseMap)
  - [promiseLoopOver](#array-promiseLoopOver) 
 
-## Array-Methods]
+## Array-Methods
 
 ### Array-shuffle
 

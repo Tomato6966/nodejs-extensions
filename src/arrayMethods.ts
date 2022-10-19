@@ -2,6 +2,12 @@ import { isEqual } from 'lodash';
 export interface ArrayFunctions {
   /** Get the last Element of the Array */
   lastElement(thisArr: any[]): any;
+  /** Get the last Element of the Array */
+  last(thisArr: any[]): any;
+  /** Get the first Element of the Array */
+  firstElement(thisArr: any[]): any;
+  /** Get the first Element of the Array */
+  first(thisArr: any[]): any;
   /** Turn the Element into Chunks */
   chunks(thisArr: any[], chunkSize: number): any[][];
   /** Sum up the Array and get whatever you need, you can supply a function, which is mapping the array, before summing up */
@@ -55,6 +61,15 @@ export function shuffle<T>(thisArr: T[]): T[] {
 // get something from the array
 export function lastElement<T>(thisArr: T[]): T {
   return thisArr[thisArr.length - 1];
+}
+export function last<T>(thisArr: T[]): T {
+  return thisArr[0];
+}
+export function first<T>(thisArr: T[]): T {
+  return thisArr[0];
+}
+export function firstElement<T>(thisArr: T[]): T {
+  return thisArr[0];
 }
 
 export function chunks<T>(thisArr: T[], chunkSize: number): T[][] {
@@ -150,6 +165,9 @@ export async function promiseLoopOver<T>(
 export default {
   shuffle,
   lastElement,
+  firstElement,
+  last,
+  first,
   chunks,
   sum,
   sumNumbersOnly,

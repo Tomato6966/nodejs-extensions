@@ -1,6 +1,12 @@
 export interface ArrayFunctions {
     /** Get the last Element of the Array */
     lastElement(thisArr: any[]): any;
+    /** Get the last Element of the Array */
+    last(thisArr: any[]): any;
+    /** Get the first Element of the Array */
+    firstElement(thisArr: any[]): any;
+    /** Get the first Element of the Array */
+    first(thisArr: any[]): any;
     /** Turn the Element into Chunks */
     chunks(thisArr: any[], chunkSize: number): any[][];
     /** Sum up the Array and get whatever you need, you can supply a function, which is mapping the array, before summing up */
@@ -42,6 +48,9 @@ export interface ArrayFunctions {
 }
 export declare function shuffle<T>(thisArr: T[]): T[];
 export declare function lastElement<T>(thisArr: T[]): T;
+export declare function last<T>(thisArr: T[]): T;
+export declare function first<T>(thisArr: T[]): T;
+export declare function firstElement<T>(thisArr: T[]): T;
 export declare function chunks<T>(thisArr: T[], chunkSize: number): T[][];
 export declare function sum<T>(thisArr: T[], mapFn?: (element: any, index: number, arr: any[]) => any): number;
 export declare function sumNumbersOnly<T>(thisArr: T[], mapFn?: (element: any, index: number, arr: any[]) => any): number;

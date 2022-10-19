@@ -2,6 +2,12 @@ declare global {
     interface Array<T> {
         /** Get the last Element of the Array */
         lastElement(): T;
+        /** Get the last Element of the Array */
+        last(): T;
+        /** Get the first Element of the Array */
+        firstElement(): T;
+        /** Get the first Element of the Array */
+        first(): T;
         /** Turn the Element into Chunks */
         chunks(chunkSize: number): T[][];
         /** Sum up the Array and get whatever you need, you can supply a function, which is mapping the array, before summing up */

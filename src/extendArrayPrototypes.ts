@@ -4,6 +4,12 @@ declare global {
   interface Array<T> {
     /** Get the last Element of the Array */
     lastElement(): T;
+    /** Get the last Element of the Array */
+    last(): T;
+    /** Get the first Element of the Array */
+    firstElement(): T;
+    /** Get the first Element of the Array */
+    first(): T;
     /** Turn the Element into Chunks */
     chunks(chunkSize: number): T[][];
     /** Sum up the Array and get whatever you need, you can supply a function, which is mapping the array, before summing up */
@@ -44,7 +50,6 @@ declare global {
     promiseLoopOver(fn: (element: any, index: number, arr: any[]) => any): Promise<void>;
   }
 }
-
 Array.prototype.shuffle =
   Array.prototype.shuffle ??
   function <T>(this: T[]): T[] {
@@ -57,6 +62,27 @@ Array.prototype.lastElement =
   Array.prototype.lastElement ??
   function <T>(this: T[]): T {
     return arrayMethods.lastElement(this);
+  };
+
+// get something from the array
+Array.prototype.last =
+  Array.prototype.last ??
+  function <T>(this: T[]): T {
+    return arrayMethods.last(this);
+  };
+
+// get something from the array
+Array.prototype.first =
+  Array.prototype.first ??
+  function <T>(this: T[]): T {
+    return arrayMethods.first(this);
+  };
+
+// get something from the array
+Array.prototype.firstElement =
+  Array.prototype.firstElement ??
+  function <T>(this: T[]): T {
+    return arrayMethods.firstElement(this);
   };
 
 Array.prototype.chunks =
