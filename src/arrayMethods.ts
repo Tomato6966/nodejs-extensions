@@ -33,7 +33,6 @@ export function sum<T>(thisArr: T[], mapFn?:(element:any, index:number, arr:any[
 }
 
 export function sumNumbersOnly<T>(thisArr: T[]): T[] {
-    if(typeof mapFn !== "undefined" && typeof mapFn !== "function") throw new SyntaxError(`Received mapFn, but it's not a Function, its type is: ${typeof mapFn}`)
     return thisArr.filter(elem => typeof elem === "number" && !isNaN(elem)).reduce((a,b) => a + b, 0);
 }
 

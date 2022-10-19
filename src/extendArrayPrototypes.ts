@@ -1,7 +1,9 @@
 import { isEqual } from "lodash";
 import arrayMethods from "./arrayMethods";
 
-export default { }
+export default function extendArrayPrototypes() { 
+  return;
+}
 declare global {
   interface Array<T> {
     /** Get the last Element of the Array */
@@ -47,6 +49,7 @@ declare global {
   }
 }
 
+// @ts-ignore
 for(const [fnName, fn] of Object.entries(arrayMethods)) Array.prototype[`${fnName}`] = Array.prototype[`${fnName}`] ?? fn;
 
 /*
