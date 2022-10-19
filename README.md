@@ -53,3 +53,50 @@ const summed = _Utils.removeDuplicates(["a", "a", "b"]);
 
 const cleared = _Utils.sumNumbersOnly([1, 2, 3]);
 ```
+
+
+# Function-Methods List
+
+If you use it without the Array extension, aka by _Utils.function(), then always add the input (array, object, etc.) upfront!
+- e.g: `_Util.shuffle([1, 2, 3, 4, 5, 6]);`
+- e.g: `_Util.chunks(["a", "b", "c", "d", "e"], 2);`
+
+## Arrays
+
+[Jump](#Array-Methods) to the Arrays overview
+
+ - [shuffle](#array-shuffle)
+ - [lastElement](#array-lastElement)
+ - [chunks](#array-chunks)
+ - [sum](#array-sum)
+ - [sumNumbersOnly](#array-sumNumbersOnly)
+ - [removeNullish](#array-removeNullish)
+ - [removeUndefined](#array-removeUndefined)
+ - [removeEmptyStrings](#array-removeEmptyStrings)
+ - [removeNaNs](#array-removeNaNs)
+ - [remove](#array-remove)
+ - [removeDuplicates](#array-removeDuplicates)
+ - [merge](#array-merge)
+ - [keepStrings](#array-keepStrings)
+ - [keepNumbers](#array-keepNumbers)
+ - [keepBoolean](#array-keepBoolean)
+ - [keepObjects](#array-keepObjects)
+ - [keepArrays](#array-keepArrays)
+ - [loopOver](#array-loopOver)
+ - [promiseMap](#array-promiseMap)
+ - [promiseLoopOver](#array-promiseLoopOver) 
+
+## Array-Methods]
+
+### Array-shuffle
+
+Creates a new mixed up (shuffled) array.
+
+ - @Paramters:
+
+ - @Returns
+    - (Array): Returns the new mixed array
+```js
+const shuffled = [1, 2, 3].shuffle();
+console.log(shuffled); // [3, 1, 2]
+```
