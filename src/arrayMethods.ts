@@ -1,11 +1,7 @@
 import { isEqual } from 'lodash';
 export interface ArrayFunctions {
   /** Get the last Element of the Array */
-  lastElement(thisArr: any[]): any;
-  /** Get the last Element of the Array */
   last(thisArr: any[]): any;
-  /** Get the first Element of the Array */
-  firstElement(thisArr: any[]): any;
   /** Get the first Element of the Array */
   first(thisArr: any[]): any;
   /** Turn the Element into Chunks */
@@ -59,19 +55,12 @@ export function shuffle<T>(thisArr: T[]): T[] {
 // .sort((a, b) => b.localeCompare(a, 'es', {sensitivity: 'base'}))
 
 // get something from the array
-export function lastElement<T>(thisArr: T[]): T {
-  return thisArr[thisArr.length - 1];
-}
 export function last<T>(thisArr: T[]): T {
   return thisArr[0];
 }
 export function first<T>(thisArr: T[]): T {
   return thisArr[0];
 }
-export function firstElement<T>(thisArr: T[]): T {
-  return thisArr[0];
-}
-
 export function chunks<T>(thisArr: T[], chunkSize: number): T[][] {
   if (!chunkSize) throw new SyntaxError('No chunkSize defined');
   if (typeof chunkSize !== 'number')
@@ -164,8 +153,6 @@ export async function promiseLoopOver<T>(
 
 export default {
   shuffle,
-  lastElement,
-  firstElement,
   last,
   first,
   chunks,

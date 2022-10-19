@@ -3,11 +3,7 @@ import * as arrayMethods from './arrayMethods';
 declare global {
   interface Array<T> {
     /** Get the last Element of the Array */
-    lastElement(): T;
-    /** Get the last Element of the Array */
     last(): T;
-    /** Get the first Element of the Array */
-    firstElement(): T;
     /** Get the first Element of the Array */
     first(): T;
     /** Turn the Element into Chunks */
@@ -58,13 +54,6 @@ Array.prototype.shuffle =
 // .sort((a, b) => b.localeCompare(a, 'es', {sensitivity: 'base'}))
 
 // get something from the array
-Array.prototype.lastElement =
-  Array.prototype.lastElement ??
-  function <T>(this: T[]): T {
-    return arrayMethods.lastElement(this);
-  };
-
-// get something from the array
 Array.prototype.last =
   Array.prototype.last ??
   function <T>(this: T[]): T {
@@ -76,13 +65,6 @@ Array.prototype.first =
   Array.prototype.first ??
   function <T>(this: T[]): T {
     return arrayMethods.first(this);
-  };
-
-// get something from the array
-Array.prototype.firstElement =
-  Array.prototype.firstElement ??
-  function <T>(this: T[]): T {
-    return arrayMethods.firstElement(this);
   };
 
 Array.prototype.chunks =

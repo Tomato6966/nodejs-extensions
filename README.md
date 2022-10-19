@@ -66,8 +66,6 @@ If you use it without the Array extension, aka by _Utils.function(), then always
 [Jump](#Array-Methods) to the Arrays overview
 
  - [shuffle](#array-shuffle)
- - [lastElement](#array-lastElement)
- - [firstElement](#array-firstElement)
  - [first](#array-first)
  - [last](#array-last)
  - [chunks](#array-chunks)
