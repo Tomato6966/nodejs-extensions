@@ -91,9 +91,6 @@ If you use it without the Array extension, aka by _Utils.function(), then always
 ### Array-shuffle
 
 Creates a new mixed up (shuffled) array.
-
- - @Paramters:
-
  - @Returns
     - (Array): Returns the new mixed array
 ```js
