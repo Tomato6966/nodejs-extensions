@@ -1,10 +1,10 @@
-export * from "./arrayMethods";
+export * from './arrayMethods';
 
-interface nodeUtilsOptions {
-    improveForEach?: boolean
+interface NodeUtilsOptions {
+  improveForEach?: boolean;
 }
+export * from './extendArrayPrototypes';
 
-export async function extendPrototypes(options?:nodeUtilsOptions) {
-    await import("./extendArrayPrototypes");
-    if(options && options.improveForEach) Array.prototype.forEach = Array.prototype.loopOver;
+export function ExtendExtraPrototypes(options?: NodeUtilsOptions) {
+  if (options && options.improveForEach) Array.prototype.forEach = Array.prototype.loopOver;
 }

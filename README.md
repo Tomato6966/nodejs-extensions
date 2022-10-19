@@ -8,6 +8,11 @@ Utility Prototype Extensions for Nodejs Classes and Types
 ✔️ Optional Function to extend Prototypes
 
 
+## Why not lodash or underscore?
+
+This package is not ment to replace lodash, nor underscore, indeed, it uses lodash too!
+ - It is ment to implement more use-case specific, readable utility functions.
+
 # Import it
 
 Typescript and ESM:
@@ -25,12 +30,11 @@ const _Utils = require("nodejs-extensions");
 # Extend prototype to make your work easier!
 
 ```js
+import _Utils from "nodejs-extensions";
 
-_Utils.extendPrototypes({
+_Utils.ExtendPrototypes({
     improveForEach: false, //if true, then it will use _Utils.loopOver instead of Array.forEach and overwride it 
 });
-
-
 // then you can do stuff like:
 
 [1, 2, 3].sumNumbersOnly();
@@ -38,12 +42,12 @@ _Utils.extendPrototypes({
 ["a", "a", "b"].removeDuplicates();
 ```
 
-## Don't wanna extend it?
+## Don't wanna extned the prototypes?
 
-Then just use it!
-
+Then import `"nodejs-extensions/safe"` to not overwride the prototypes
 
 ```js
+import _Utils from "nodejs-extensions/safe";
 
 _Utils.removeDuplicates(["a", "a", "b"]);
 
