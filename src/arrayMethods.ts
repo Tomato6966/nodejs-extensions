@@ -27,12 +27,12 @@ export function chunks<T>(thisArr: T[], chunkSize:number): T[][] {
   return chunks;
 }
 
-export function sum<T>(thisArr: T[], mapFn?:(element:any, index:number, arr:any[]) => any): T[] {
+export function sum<T>(thisArr: T[], mapFn?:(element:any, index:number, arr:any[]) => any): number {
     if(typeof mapFn !== "undefined" && typeof mapFn !== "function") throw new SyntaxError(`Received mapFn, but it's not a Function, its type is: ${typeof mapFn}`)
     return (mapFn ? thisArr.map(mapFn) : thisArr).reduce((a,b) => a + b, 0);
 }
 
-export function sumNumbersOnly<T>(thisArr: T[]): T[] {
+export function sumNumbersOnly<T>(thisArr: T[]): number {
     return thisArr.filter(elem => typeof elem === "number" && !isNaN(elem)).reduce((a,b) => a + b, 0);
 }
 
@@ -56,7 +56,7 @@ export function remove<T>(thisArr: T[], ...elems: T[]): T[] {
 export function removeDuplicates<T>(thisArr: T[]): T[] {
   return thisArr.reduce((a, c) => !a.some(item => isEqual(item, c)) ? a.concat([c]) : a, [])
 }
-export function merge<T>(thisArr: T[], ...elements:any[]): T[] {
+export function merge<T>(thisArr: T[], ...elements:any[]): any[] {
   if(!elements || !elements?.length) throw new SyntaxError(`did not receive any elements to merge.`)
   return [...this, ...elements];
 }
