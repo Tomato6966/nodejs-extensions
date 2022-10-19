@@ -13,7 +13,7 @@ declare global {
     /** Sum up the Array and get whatever you need, you can supply a function, which is mapping the array, before summing up */
     sum(mapFn?:(element:any, index:number, arr:any[]) => any): number;
     /** Sum up the Array, but only things which are valid Numbers and not NaNs */
-    sumNumbersOnly(): number;
+    sumNumbersOnly(mapFn?:(element:any, index:number, arr:any[]) => any): number;
     /** Removes Nullish elements */
     removeNullish(): Array<T>;
     /** Removes undefined elements */

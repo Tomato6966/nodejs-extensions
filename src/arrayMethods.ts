@@ -32,8 +32,9 @@ export function sum<T>(thisArr: T[], mapFn?:(element:any, index:number, arr:any[
     return (mapFn ? thisArr.map(mapFn) : thisArr).reduce((a,b) => a + b, 0);
 }
 
-export function sumNumbersOnly<T>(thisArr: T[]): number {
-    return thisArr.filter(elem => typeof elem === "number" && !isNaN(elem)).reduce((a,b) => a + b, 0);
+export function sumNumbersOnly<T>(thisArr: T[], mapFn?:(element:any, index:number, arr:any[]) => any): number {
+    // @ts-ignore
+    return (mapFn ? thisArr.map(mapFn) : thisArr).filter(elem => typeof elem === "number" && !isNaN(elem)).reduce((a,b) => a + b, 0);
 }
 
 // changes the array
@@ -53,10 +54,10 @@ export function remove<T>(thisArr: T[], ...elems: T[]): T[] {
   if(!elems || !elems.length) throw new SyntaxError(`Did not receive an element to remove.`);
   return thisArr.filter(element => elems.some(elem => isEqual(element, elem)));
 }
-export function removeDuplicates<T>(thisArr: T[]): T[] {
-  return thisArr.reduce((a, c) => !a.some(item => isEqual(item, c)) ? a.concat([c]) : a, [])
+export function removeDuplicates<T>(thisArr: T[]): T[] { // @ts-ignoreg
+    return thisArr.reduce((a, c) => !a.some(item => isEqual(item, c)) ? a.concat([c]) : a, [])
 }
-export function merge<T>(thisArr: T[], ...elements:any[]): any[] {
+export function merge<T>(thisArr: T[], ...elements:any[]): any[] { // @ts-ignore
   if(!elements || !elements?.length) throw new SyntaxError(`did not receive any elements to merge.`)
   return [...this, ...elements];
 }
@@ -78,8 +79,8 @@ export function keepArrays<T>(thisArr: T[]): T[] {
 export function loopOver<T>(thisArr: T[], fn:(element:T, index:number, arr:Array<T>) => any): void {
     if(!fn || typeof fn !== "function") throw new SyntaxError(`did not receive a valid function for the mapping, received: ${typeof fn}`)
     for(let i = thisArr.length -1; i >= 0; i--) fn(thisArr[i], i, thisArr)
-    return thisArr;
-  };
+    return;
+};
 export async function promiseMap<T>(thisArr: T[], fn:(element:T, index:number, arr:Array<T>) => any): Promise<T[]> {
   if(!fn || typeof fn !== "function") throw new SyntaxError(`did not receive a valid function for the mapping, received: ${typeof fn}`)
   return Promise.all(thisArr.map(fn));
