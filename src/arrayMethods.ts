@@ -55,10 +55,9 @@ export function remove<T>(thisArr: T[], ...elems: T[]): T[] {
   return thisArr.filter(element => elems.some(elem => isEqual(element, elem)));
 }
 export function removeDuplicates<T>(thisArr: T[]): T[] {
-  if(typeof fn !== "undefined" && typeof fn !== "function") throw new SyntaxError(`Option Type`)
   return thisArr.reduce((a, c) => !a.some(item => isEqual(item, c)) ? a.concat([c]) : a, [])
 }
-export function merge<T>(thisArr: T[], ...elements:T): T[] {
+export function merge<T>(thisArr: T[], ...elements:any[]): T[] {
   if(!elements || !elements?.length) throw new SyntaxError(`did not receive any elements to merge.`)
   return [...this, ...elements];
 }

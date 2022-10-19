@@ -27,7 +27,7 @@ const _Utils = require("nodejs-extensions");
 ```js
 
 _Utils.extendPrototypes({
-    improveForeach: false, //if true, then it will use _Utils.loopOver instead of Array.forEach and overwride it 
+    improveForEach: false, //if true, then it will use _Utils.loopOver instead of Array.forEach and overwride it 
 });
 
 

@@ -1,7 +1,7 @@
 import { isEqual } from "lodash";
 import arrayMethods from "./arrayMethods";
 
-export{}
+export default { }
 declare global {
   interface Array<T> {
     /** Get the last Element of the Array */
@@ -47,7 +47,7 @@ declare global {
   }
 }
 
-for(const [fnName, fn] of Object.entries(arrayMethods)) Array.prototype[fnName] = Array.prototype[fnName] ?? fn;
+for(const [fnName, fn] of Object.entries(arrayMethods)) Array.prototype[`${fnName}`] = Array.prototype[`${fnName}`] ?? fn;
 
 /*
 Array.prototype.shuffle = Array.prototype.shuffle ?? function<T>(): T[] {
@@ -101,7 +101,6 @@ Array.prototype.remove = Array.prototype.remove ?? function<T>(...elems: T[]): T
   return this.filter(element => elems.some(elem => isEqual(element, elem)));
 }
 Array.prototype.removeDuplicates = Array.prototype.removeDuplicates ?? function<T>(): T[] {
-  if(typeof fn !== "undefined" && typeof fn !== "function") throw new SyntaxError(`Option Type`)
   return this.reduce((a, c) => !a.some(item => isEqual(item, c)) ? a.concat([c]) : a, [])
 }
 Array.prototype.merge = Array.prototype.merge ?? function<T>(...elements:T): T[] {
