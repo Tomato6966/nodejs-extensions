@@ -37,9 +37,9 @@ _Utils.ExtendPrototypes({
 });
 // then you can do stuff like:
 
-[1, 2, 3].sumNumbersOnly();
+const summed = [1, 2, 3, "a"].sumNumbersOnly();
 
-["a", "a", "b"].removeDuplicates();
+const cleared = ["a", "a", "b"].removeDuplicates();
 ```
 
 ## Don't wanna extned the prototypes?
@@ -49,7 +49,7 @@ Then import `"nodejs-extensions/safe"` to not overwride the prototypes
 ```js
 import _Utils from "nodejs-extensions/safe";
 
-_Utils.removeDuplicates(["a", "a", "b"]);
+const summed = _Utils.removeDuplicates(["a", "a", "b"]);
 
-_Utils.sumNumbersOnly([1, 2, 3]);
+const cleared = _Utils.sumNumbersOnly([1, 2, 3]);
 ```
