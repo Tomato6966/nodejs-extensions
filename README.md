@@ -86,6 +86,7 @@ If you use it without the Array extension, aka by _Utils.function(), then always
  - [loopOver](#array-loopOver)
  - [promiseMap](#array-promiseMap)
  - [promiseLoopOver](#array-promiseLoopOver) 
+ - [filterUntil](#array-filterUntil) 
 
 ## Array-Methods
 

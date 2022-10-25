@@ -44,8 +44,15 @@ declare global {
     promiseMap(fn: (element: any, index: number, arr: any[]) => any): Promise<T[]>;
     /** Efficiently loop over the array, faster then .forEach() */
     promiseLoopOver(fn: (element: any, index: number, arr: any[]) => any): Promise<void>;
+    /** Filter out things, that meet 2 functions parameters */
+    filterUntil(fn: (element: any, index: number, arr: any[]) => any, stopFn: (element: any, index: number, arr: any[]) => any): any[]
   }
 }
+Array.prototype.filterUntil =
+  Array.prototype.filterUntil ??
+  function <T>(this: T[], fn: (element: T, index: number, arr: T[]) => any, stopFn: (element: T, index: number, arr: T[]) => any): T[] {
+    return arrayMethods.filterUntil(this, fn, stopFn);
+  };
 Array.prototype.shuffle =
   Array.prototype.shuffle ??
   function <T>(this: T[]): T[] {
