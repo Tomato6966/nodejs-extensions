@@ -42,21 +42,12 @@ export interface ArrayFunctions {
   promiseMap(thisArr: any[], fn: (element: any, index: number, arr: any[]) => any): Promise<any[]>;
   /** Efficiently loop over the array, faster then .forEach() */
   promiseLoopOver(thisArr: any[], fn: (element: any, index: number, arr: any[]) => any): Promise<void>;
-  /** Filter out things, that meet 2 functions parameters */
-  filterUntil(fn: (element: any, index: number, arr: any[]) => any, stopFn: (element: any, index: number, arr: any[]) => any): any[]
+  /** Remove every until the function matches something. if no match found empty array gets returned */
+  removeUntil(thisArr: any[], fn: (element: any, index: number, arr: any[]) => any): any[]
 }
-export function filterUntil<T>(thisArr: T[], fn: (element: T, index: number, arr: T[]) => Promise<any>, stopFn: (element: T, index: number, arr: T[]) => Promise<any>): T[] {
-  const { result } = thisArr.reduce(
-    ({ result, isStopped }, item) => {
-      isStopped = isStopped || stopFn(item);
-      return {
-        result: !isStopped && fn(item) ? [...result, item] : result,
-        isStopped,
-      };
-    },
-    { result: [], isStopped: false }
-  );
-  return result;
+export function removeUntil<T>(thisArr: T[], fn: (element: T, index: number, arr: T[]) => Promise<any>): T[] {
+  const index = thisArr.findIndex(fn);
+  return index >= 0 ? thisArr.slice(index) : [];
 };
 export function shuffle<T>(thisArr: T[]): T[] {
   const shuffled = [...thisArr];
