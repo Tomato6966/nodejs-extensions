@@ -45,8 +45,8 @@ export interface ArrayFunctions {
   /** Filter out things, that meet 2 functions parameters */
   filterUntil(fn: (element: any, index: number, arr: any[]) => any, stopFn: (element: any, index: number, arr: any[]) => any): any[]
 }
-export function filterUntil<T>(fn: (element: T, index: number, arr: T[]) => Promise<any>, stopFn: (element: T, index: number, arr: T[]) => Promise<any>): T[] {
-  const { result } = this.reduce(
+export function filterUntil<T>(thisArr: T[], fn: (element: T, index: number, arr: T[]) => Promise<any>, stopFn: (element: T, index: number, arr: T[]) => Promise<any>): T[] {
+  const { result } = thisArr.reduce(
     ({ result, isStopped }, item) => {
       isStopped = isStopped || stopFn(item);
       return {
